@@ -8,13 +8,12 @@ const App = () => {
     return (
         <Router>
             <div className="app">
+                <Navbar />
                 <Switch>
                     <Route path="/checkout">
-                        <Navbar />
                         <Checkout />
                     </Route>
                     <Route path="/">
-                        <Navbar />
                         <Home />
                     </Route>
                 </Switch>
