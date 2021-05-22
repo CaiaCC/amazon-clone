@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
@@ -6,10 +7,12 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 const Navbar = () => {
     return (
         <div className="nav">
-            <img
-                className="nav__logo"
-                src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-            />
+            <Link to="/">
+                <img
+                    className="nav__logo"
+                    src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+                />
+            </Link>
 
             <div className="nav__search">
                 <input className="nav__searchInput" type="text" />
@@ -34,12 +37,14 @@ const Navbar = () => {
                     <span className="nav__right__optionLineTwo">Prime</span>
                 </div>
 
-                <div className="nav__right__optionBasket">
-                    <ShoppingBasketIcon />
-                    <span className="nav__right__optionLineTwo nav__right__basketCount">
-                        0
-                    </span>
-                </div>
+                <Link to="/checkout">
+                    <div className="nav__right__optionBasket">
+                        <ShoppingBasketIcon />
+                        <span className="nav__right__optionLineTwo nav__right__basketCount">
+                            0
+                        </span>
+                    </div>
+                </Link>
             </div>
         </div>
     );
