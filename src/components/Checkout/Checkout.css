@@ -5,10 +5,6 @@
     height: max-content;
 }
 
-.checkout__left {
-
-}
-
 .checkout__ad {
     height: 30vh;
     margin-bottom: 10px;
@@ -20,6 +16,3 @@
     border-bottom: 1px solid lightgray;
 }
 
-.checkout__right {
-    
-}
