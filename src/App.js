@@ -19,7 +19,7 @@ const App = () => {
 
     useEffect(() => {
         auth.onAuthStateChanged((authUser) => {
-            console.log("the user is: ", authUser);
+            // console.log("user: ", authUser);
 
             if (authUser) {
                 dispatch({
