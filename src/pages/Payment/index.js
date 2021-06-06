@@ -36,8 +36,6 @@ const Payment = () => {
         getClientSecret(); // NOTE: standard snippet for async function in useEffect
     }, [basket]);
 
-    // console.log('Client Secret: ', clientSecret)
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         setProcessing(true); // disable button once hit submit
