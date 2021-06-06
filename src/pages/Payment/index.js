@@ -35,6 +35,8 @@ const Payment = () => {
         getClientSecret(); // NOTE: standard snippet for async function in useEffect
     }, [basket]);
 
+    // console.log('Client Secret: ', clientSecret)
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         setProcessing(true); // disable button once hit submit
@@ -47,9 +49,14 @@ const Payment = () => {
             })
             .then(({ paymentIntent }) => {
                 // NOTE: paymentIntent === payment conformation
+
                 setSucceeded(true);
                 setError(null);
                 setProcessing(false);
+
+                dispatch({
+                    type: 'EMPTY_BASKET',
+                })
 
                 history.replace('/orders')
             });
