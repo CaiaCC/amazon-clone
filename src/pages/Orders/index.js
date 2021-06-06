@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Order from "../../components/Order";
 import { db } from "../../firebase";
 import { useStateValue } from "../../StateProvider";
 import './Orders.css';
@@ -27,6 +28,12 @@ const Orders = () => {
     return (
         <div className="orders">
             <h1>Your Orders</h1>
+
+            <div className="orders__order">
+                {orders?.map(order => (
+                    <Order order={order} />
+                ))}
+            </div>
         </div>
     )
 }
