@@ -8,48 +8,48 @@ const Home = () => {
             <div className="home__container">
                 <img
                     className="home__image"
-                    src="https://images-na.ssl-images-amazon.com/images/G/15/digital/video/merch/2021/TV/BRND/BRND_MTH21_GWBleedingHero_1500x600_Final_en-CA_ENG_PVD6862._CB670220811_.jpg"
+                    src="https://images-na.ssl-images-amazon.com/images/G/15/digital/video/merch/2021/Movie/Store/WatchToGiveBackPride/4284_DESKTOP_TALL_HERO_1X_1500x600_EN._CB667166599_.jpg"
                     alt="prime video ad banner"
                 />
 
                 <div className="home__row">
                     <Product
                         id="12321341"
-                        title="Cracking the Coding Interview: 189 Programming Questions and Solutions Paperback – Illustrated, July 1 2015k"
-                        price={33.91}
+                        title="Cracking the Coding Interview: 189 Programming Questions and Solutions Paperback – Illustrated, July 1 2015"
+                        price={42.55}
                         rating={5}
                         image="https://images-na.ssl-images-amazon.com/images/I/41oYsXjLvZL._SX348_BO1,204,203,200_.jpg"
                     />
                     <Product
-                        id="49538094"
-                        title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
-                        price={239.0}
-                        rating={4}
-                        image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg"
+                        id="B07V6ZSHF4"
+                        title="VIVO Electric 60 x 24 inch Stand Up Desk, Black Solid One-Piece Table Top, Black Frame, Height Adjustable Standing Workstation with Memory Preset Controller, DESK-KIT-1B6B"
+                        price={499.0}
+                        rating={5}
+                        image="https://images-na.ssl-images-amazon.com/images/I/71PdiWTquRL._AC_SL1500_.jpg"
                     />
                 </div>
 
                 <div className="home__row">
                     <Product
                         id="4903850"
-                        title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
-                        price={199.99}
-                        rating={3}
-                        image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
+                        title="Ninja BN801 Professional Plus Kitchen System with Auto-iQ, and 64 oz. max liquid capacity Total Crushing Pitcher, in a Black and Stainless Steel Finish"
+                        price={267.81}
+                        rating={4}
+                        image="https://images-na.ssl-images-amazon.com/images/I/81W%2BZH79QRL._AC_SL1500_.jpg"
                     />
                     <Product
                         id="23445930"
-                        title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
-                        price={98.99}
+                        title="All-new Echo Dot (4th Gen) | Smart speaker with clock and Alexa | Glacier White"
+                        price={79.99}
                         rating={4}
-                        image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
+                        image="https://images-na.ssl-images-amazon.com/images/I/61nNGJH14kL._AC_SL1000_.jpg"
                     />
                     <Product
                         id="3254354345"
-                        title="New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)"
-                        price={598.99}
+                        title="2021 Apple 11-inch iPad Pro (Wi-Fi + Cellular, 128GB) - Space Grey"
+                        price={1199.99}
                         rating={5}
-                        image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
+                        image="https://images-na.ssl-images-amazon.com/images/I/61-HhtLrcaS._AC_SL1000_.jpg"
                     />
                 </div>
 
