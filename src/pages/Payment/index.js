@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Payment.css";
 import { useStateValue } from "../../StateProvider";
 import CheckoutProduct from "../../components/CheckoutProduct";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../../reducer";
 
 const Payment = () => {
     const [{ user, basket }, dispatch] = useStateValue();
+    const history = useHistory();
+
     const stripe = useStripe();
     const elements = useElements();
 
@@ -16,8 +19,41 @@ const Payment = () => {
     const [processing, setProcessing] = useState("");
     const [error, setError] = useState(null);
     const [disabled, setDisabled] = useState(true);
+    const [clientSecret, setClientSecret] = useState(true);
 
-    const handleSubmit = (e) => {};
+    useEffect(() => {
+        // generate the special stripe secret which allows us to charge a customer
+        const getClientSecret = async () => {
+            const response = await axios({
+                method: "post",
+                url: `/payments/create?total=${getBasketTotal(basket) * 100}`, // NOTE: Stripe expects the total in a currencies subunits(cents)
+            });
+
+            setClientSecret(response.data.clientSecret);
+        };
+
+        getClientSecret(); // NOTE: standard snippet for async function in useEffect
+    }, [basket]);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setProcessing(true); // disable button once hit submit
+
+        const payload = await stripe
+            .confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: elements.getElement(CardElement),
+                },
+            })
+            .then(({ paymentIntent }) => {
+                // NOTE: paymentIntent === payment conformation
+                setSucceeded(true);
+                setError(null);
+                setProcessing(false);
+
+                history.replace('/orders')
+            });
+    };
 
     const handleChange = (event) => {
         setDisabled(event.empty);
