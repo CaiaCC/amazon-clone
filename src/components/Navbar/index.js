@@ -33,7 +33,7 @@ const Navbar = () => {
                 <Link to={!user && "/login"} >
                     <div onClick={handleAuthentication} className="nav__right__option">
                         <span className="nav__right__optionLineOne">
-                           Hello { user? user.email : `Guest`}
+                           Hello, { user? user.email : `Guest`}
                         </span>
                         <span className="nav__right__optionLineTwo">{!user ? `Sign In`: `Sign Out`}</span>
                     </div>
