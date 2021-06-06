@@ -39,10 +39,12 @@ const Navbar = () => {
                     </div>
                 </Link>
 
-                <div className="nav__right__option">
-                    <span className="nav__right__optionLineOne">Returns</span>
-                    <span className="nav__right__optionLineTwo">& Orders</span>
-                </div>
+                <Link to="/orders">
+                    <div className="nav__right__option">
+                        <span className="nav__right__optionLineOne">Returns</span>
+                        <span className="nav__right__optionLineTwo">& Orders</span>
+                    </div>
+                </Link>
 
                 <div className="nav__right__option">
                     <span className="nav__right__optionLineOne">Your</span>
