@@ -4,9 +4,16 @@ import "./Navbar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { useStateValue } from "../../StateProvider";
+import {auth} from '../../firebase';
 
 const Navbar = () => {
-    const [{ basket }, dispatch] = useStateValue();
+    const [{ basket, user }, dispatch] = useStateValue();
+
+    const handleAuthentication = () => {
+        if (user) {
+            auth.signOut();
+        }
+    }
 
     return (
         <div className="nav">
@@ -23,12 +30,12 @@ const Navbar = () => {
             </div>
 
             <div className="nav__right">
-                <Link to="/login" >
-                    <div className="nav__right__option">
+                <Link to={!user && "/login"} >
+                    <div onClick={handleAuthentication} className="nav__right__option">
                         <span className="nav__right__optionLineOne">
-                            Hello Guest
+                           Hello { user? user.email : `Guest`}
                         </span>
-                        <span className="nav__right__optionLineTwo">Sign In</span>
+                        <span className="nav__right__optionLineTwo">{!user ? `Sign In`: `Sign Out`}</span>
                     </div>
                 </Link>
 
